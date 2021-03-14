@@ -8,7 +8,7 @@ only. Work in progress...
 ## Setup Instructions
 You only need do this once.
 
-NOTE: This link in step 3 is a 'join' invitation, as documented 
+NOTE: This link in step 1 is a 'join' invitation, as documented 
 in https://www.coinbase.com/invite. 
 The join url resolves to https://www.coinbase.com/join/cowman_bg
 
@@ -31,9 +31,9 @@ Also, this link is the invite link mentioned above.
 #### Create and use an API key
 1. Under [Profile --> Settings --> API](https://www.coinbase.com/settings/api),
 select __New API Key__.
-1. In the project folder, create a file called __private_api.json__.
-1. Copy the contents of __api.json__ into it.
-1. Replace the dummy values in __private_api.json__ 
+1. In the __security__ folder, create a file called __api_keys.json__.
+1. Copy the contents of __api_keys_template.json__ into it.
+1. Replace the dummy values in __api_keys.json__ 
    with the public and secret keys you just created.
 #### Create a Virtual Environment and install requirements
 1. Create a virtual environment in the project folder:
