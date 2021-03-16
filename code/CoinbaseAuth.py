@@ -7,7 +7,7 @@ import time
 from requests.auth import AuthBase
 
 
-class Auth(AuthBase):
+class CoinbaseAuth(AuthBase):
     """
     HMAC Authenticator for CoinBase
     """
@@ -29,7 +29,7 @@ class Auth(AuthBase):
 
         signature = hmac.new(secret, message, hashlib.sha256).hexdigest()
         request.headers.update({
-            # to_native_string('CB-VERSION'): self.version,
+            to_native_string('CB-VERSION'): self.version,
             to_native_string('CB-ACCESS-KEY'): self.api_key,
             to_native_string('CB-ACCESS-SIGN'): signature,
             to_native_string('CB-ACCESS-TIMESTAMP'): timestamp,

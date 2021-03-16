@@ -1,6 +1,6 @@
 import json
 import requests
-from CoinbaseAuth import Auth
+from CoinbaseAuth import CoinbaseAuth
 
 
 class ApiRequest:
@@ -10,7 +10,7 @@ class ApiRequest:
     Specify REST endpoint (excluding base url) in request
     """
 
-    version = 2
+    version = '2021-02-22'
     base_url = 'https://api.coinbase.com/v2/'
 
     def __init__(self, keyfile):
@@ -23,6 +23,6 @@ class ApiRequest:
 
     def request(self, endpoint):
 
-        auth = Auth(self.public, self.secret, self.version)
+        auth = CoinbaseAuth(self.public, self.secret, self.version)
         return requests.get(self.base_url + endpoint, auth=auth)
 
