@@ -1,15 +1,18 @@
-from unittest import TestCase
+from code.JsonObj import JsonObj
+from tests.TestBase import TestBase
 from hamcrest import *
-import sys
-sys.path.insert(1, '../code')
-sys.path.insert(1, '../security')
+
 from code.ApiRequest import ApiRequest
 
 
-class TestApiRequest(TestCase):
-
+class TestApiRequest(TestBase):
     api = ApiRequest(keyfile='../security/api_keys.json')
 
     def test_request(self):
-        response = self.api.request('accounts')
+        response = self.api.get_json('accounts')
         assert_that(response.status_code, is_(200))
+
+    def test_get_object(self):
+        j = self.api.get_json('accounts')
+        o = JsonObj(j.content)
+        assert_that(len(o.data), is_not(0))

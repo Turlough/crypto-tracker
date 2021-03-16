@@ -1,6 +1,7 @@
 import json
 import requests
 from CoinbaseAuth import CoinbaseAuth
+from code.JsonObj import JsonObj
 
 
 class ApiRequest:
@@ -21,8 +22,10 @@ class ApiRequest:
         self.public = (keys['public'])
         self.secret = (keys['secret'])
 
-    def request(self, endpoint):
+    def get_json(self, endpoint):
 
         auth = CoinbaseAuth(self.public, self.secret, self.version)
         return requests.get(self.base_url + endpoint, auth=auth)
 
+    def get_object(self, endpoint):
+        return JsonObj(self.get_json(endpoint).content)

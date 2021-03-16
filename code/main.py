@@ -7,5 +7,5 @@ def prettify(s):
 
 
 api = ApiRequest(keyfile='../security/api_keys.json')
-j = api.request('accounts')
+j = api.get_json('accounts')
 print(prettify(j.json()))
