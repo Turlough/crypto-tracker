@@ -8,6 +8,9 @@ from requests.auth import AuthBase
 
 
 class Auth(AuthBase):
+    """
+    HMAC Authenticator for CoinBase
+    """
 
     def __init__(self, api_key, secret_key, version):
         self.api_key = api_key

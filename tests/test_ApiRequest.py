@@ -1,6 +1,5 @@
 from unittest import TestCase
 from hamcrest import *
-import json
 import sys
 sys.path.insert(1, '../code')
 sys.path.insert(1, '../security')

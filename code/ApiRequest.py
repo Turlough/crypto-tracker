@@ -1,9 +1,14 @@
 import json
 import requests
-from Auth import Auth
+from CoinbaseAuth import Auth
 
 
 class ApiRequest:
+    """
+    Wrapper to authenticate request.
+    Specify keyfile in constructor.
+    Specify REST endpoint (excluding base url) in request
+    """
 
     version = 2
     base_url = 'https://api.coinbase.com/v2/'
