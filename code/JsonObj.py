@@ -3,9 +3,9 @@ import json
 
 class Generic:
     @classmethod
-    def from_dict(cls, dict):
+    def from_dict(cls, d):
         obj = cls()
-        obj.__dict__.update(dict)
+        obj.__dict__.update(d)
         return obj
 
 

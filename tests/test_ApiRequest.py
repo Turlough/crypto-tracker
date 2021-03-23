@@ -22,5 +22,4 @@ class TestApiRequest(TestBase):
     def test_obj(self):
         o = self.api.get_object('accounts')
         assert_that(len(o.data), is_not(0))
-        print(json.dumps(o.data[0]))
-        assert_that(o.data[0]["currency"]["code"], is_(self.currency))
+        assert_that(o.data[0].currency.code, is_(self.currency))
