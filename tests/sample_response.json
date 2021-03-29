@@ -1,0 +1,66 @@
+{
+    "data": [
+        {
+            "allow_deposits": false,
+            "allow_withdrawals": false,
+            "balance": {
+                "amount": "10",
+                "currency": "MANA"
+            },
+            "created_at": "2021-02-22T22:44:01Z",
+            "currency": {
+                "address_regex": "^(?:0x)?[0-9a-fA-F]{40}$",
+                "asset_id": "66b98195-0562-586b-8cee-ee7f57923fef",
+                "code": "MANA",
+                "color": "#B8AFA2",
+                "exponent": 8,
+                "name": "Decentraland",
+                "slug": "decentraland",
+                "sort_index": 110,
+                "type": "crypto"
+            },
+            "name": "MANA Wallet",
+            "primary": true,
+            "resource": "account",
+            "type": "wallet",
+            "updated_at": "2021-03-28T21:28:49Z"
+        },
+        {
+            "allow_deposits": false,
+            "allow_withdrawals": false,
+            "balance": {
+                "amount": "0.000000",
+                "currency": "ADA"
+            },
+            "created_at": null,
+            "currency": {
+                "address_regex": "(^(addr|stake)1[ac-hj-np-z02-9]{6,}$)|(^(DdzFFz|Ae2td)[1-9A-HJ-NP-Za-km-z]+)",
+                "asset_id": "63062039-7afb-56ff-8e19-5e3215dc404a",
+                "code": "ADA",
+                "color": "#0033AD",
+                "exponent": 6,
+                "name": "Cardano",
+                "slug": "cardano",
+                "sort_index": 164,
+                "type": "crypto"
+            },
+            "id": "ADA",
+            "name": "ADA Wallet",
+            "primary": true,
+            "resource": "account",
+            "resource_path": "/v2/accounts/ADA",
+            "type": "wallet",
+            "updated_at": null
+        }
+    ],
+    "pagination": {
+        "ending_before": null,
+        "limit": 25,
+        "next_starting_after": null,
+        "next_uri": null,
+        "order": "desc",
+        "previous_ending_before": null,
+        "previous_uri": null,
+        "starting_after": null
+    }
+}

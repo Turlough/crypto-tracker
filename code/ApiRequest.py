@@ -13,6 +13,7 @@ class ApiRequest:
 
     version = '2021-02-22'
     base_url = 'https://api.coinbase.com/v2/'
+    fiat = 'EUR'
 
     def __init__(self, keyfile):
         # create API auth using your keys
@@ -29,3 +30,13 @@ class ApiRequest:
 
     def get_object(self, endpoint):
         return JsonObj(self.get_json(endpoint).content)
+
+    def get_exchange_rates(self):
+        return requests.get(f'{self.base_url}exchange-rates?currency={self.fiat}')
+
+    def get_price(self, coin, fiat_currency=fiat):
+        return requests.get(f'{self.base_url}/prices/{coin}-{fiat_currency}/spot')
+
+    def test_buy(self, fiat_amount, coin, price):
+        coin_quantity = fiat_amount / price
+        return coin_quantity
